@@ -1,0 +1,323 @@
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+How many disks?
+UI 5
+5
+4
+3
+2
+1
+0:Human plays. 1:Computer plays.
+UI 1
+a 54321
+b 
+c 
+
+a 54321
+b 
+c 
+
+a 54321
+b 
+c 
+
+a 54321
+b 
+c 
+
+a 54321
+b 
+c 
+
+a 5432
+b 
+c 1
+
+a 5432
+b 
+c 1
+
+a 543
+b 2
+c 1
+
+a 543
+b 2
+c 1
+
+a 543
+b 21
+c 
+
+a 543
+b 21
+c 
+
+a 54
+b 21
+c 3
+
+a 54
+b 21
+c 3
+
+a 54
+b 21
+c 3
+
+a 541
+b 2
+c 3
+
+a 541
+b 2
+c 3
+
+a 541
+b 
+c 32
+
+a 541
+b 
+c 32
+
+a 54
+b 
+c 321
+
+a 54
+b 
+c 321
+
+a 5
+b 4
+c 321
+
+a 5
+b 4
+c 321
+
+a 5
+b 4
+c 321
+
+a 5
+b 4
+c 321
+
+a 5
+b 41
+c 32
+
+a 5
+b 41
+c 32
+
+a 52
+b 41
+c 3
+
+a 52
+b 41
+c 3
+
+a 521
+b 4
+c 3
+
+a 521
+b 4
+c 3
+
+a 521
+b 43
+c 
+
+a 521
+b 43
+c 
+
+a 521
+b 43
+c 
+
+a 52
+b 43
+c 1
+
+a 52
+b 43
+c 1
+
+a 5
+b 432
+c 1
+
+a 5
+b 432
+c 1
+
+a 5
+b 4321
+c 
+
+a 5
+b 4321
+c 
+
+a 
+b 4321
+c 5
+
+a 
+b 4321
+c 5
+
+a 
+b 4321
+c 5
+
+a 
+b 4321
+c 5
+
+a 
+b 4321
+c 5
+
+a 1
+b 432
+c 5
+
+a 1
+b 432
+c 5
+
+a 1
+b 43
+c 52
+
+a 1
+b 43
+c 52
+
+a 
+b 43
+c 521
+
+a 
+b 43
+c 521
+
+a 3
+b 4
+c 521
+
+a 3
+b 4
+c 521
+
+a 3
+b 4
+c 521
+
+a 3
+b 41
+c 52
+
+a 3
+b 41
+c 52
+
+a 32
+b 41
+c 5
+
+a 32
+b 41
+c 5
+
+a 321
+b 4
+c 5
+
+a 321
+b 4
+c 5
+
+a 321
+b 
+c 54
+
+a 321
+b 
+c 54
+
+a 321
+b 
+c 54
+
+a 321
+b 
+c 54
+
+a 32
+b 
+c 541
+
+a 32
+b 
+c 541
+
+a 3
+b 2
+c 541
+
+a 3
+b 2
+c 541
+
+a 3
+b 21
+c 54
+
+a 3
+b 21
+c 54
+
+a 
+b 21
+c 543
+
+a 
+b 21
+c 543
+
+a 
+b 21
+c 543
+
+a 1
+b 2
+c 543
+
+a 1
+b 2
+c 543
+
+a 1
+b 
+c 5432
+
+a 1
+b 
+c 5432
+
+a 
+b 
+c 54321
+
+
+Not printing goal stack.  -10
+
+SCORE: 20/30

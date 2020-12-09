@@ -1,0 +1,37 @@
+Enter file name
+UI words
+Successfully loaded words
+Enter a starting word
+UI fail
+Enter ending word
+UI pass
+0:Human plays. 1:Computer plays.
+UI 0
+Current word: fail Target word: pass
+Enter next word: 
+UI pall
+Invalid word
+Current word: fail Target word: pass
+Enter next word: 
+UI fail
+Current word: fail Target word: pass
+Enter next word: 
+UI fais
+Word not listed
+Current word: fail Target word: pass
+Enter next word: 
+UI fail
+Current word: fail Target word: pass
+Enter next word: 
+UI fall
+Current word: fall Target word: pass
+Enter next word: 
+UI pall
+Current word: pall Target word: pass
+Enter next word: 
+UI pals
+Current word: pals Target word: pass
+Enter next word: 
+UI pass
+You win!
+SCORE 30/30

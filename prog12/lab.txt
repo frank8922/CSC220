@@ -1,0 +1,100 @@
+0. Go over mary.txt.  Ask questions about anything you do not
+   understand.  Be prepared to answer questions if you don't ask
+   questions!
+
+
+1. Create the prog12 package and install the .java files and .jar file.
+
+   In Eclipse, right click on the csc220 project and select "Properties"
+   In the menu on the left side, choose Java Build Path
+   Select the Libraries tab
+   Click Add External Jar
+   In the file browser that pops up, navigate to
+   workspace/csc220/src/prog12
+   and select the jar you just downloaded.
+   Click OK, now the jar has been added to the project
+   (It should be under classpath, NOT moduleinfo.)
+
+   BetterBrowser.java should now not have a red x.
+
+
+2. Create a Binge (Binge Is Not Google Either) class which implements
+   SearchEngine.  Give it an empty gather and search method.  search
+   should return new String[0].  The file should compile, but
+   obviously it does nothing.
+
+
+3. Look at PageFile.java, HardDisk.java, and PageTrie.java.  Ask
+   questions if you do not understand what they do.
+
+   Put a HardDisk variable pageDisk inside Binge to store the
+   information about web pages.  What type of HardDisk (what is T)?
+   Initialize pageDisk.
+
+   Put a PageTrie variable urlToIndex into Binge.  Initialize.
+
+
+4. Write an indexPage method that takes the String url of the web page
+   as input and returns the index of its newly created page file.  It
+   gets the index of a new file from pageDisk, creates a new
+   PageFile, and stores the PageFile in pageDisk.  Then it tells the
+   trie urlToIndex to map url to that index and returns the index.
+
+
+5. In gather, create a queue of page indices.
+
+   For each starting URL, check if it has been indexed already (how?).
+   If not, index it using indexPage and put the new index into the queue.
+
+   Do the following while the queue is not empty:
+
+   Dequeue a page index.
+   Load its URL into the browser.
+   If it loads, get its list of URLs.
+
+   For each URL that has not been indexed yet, index it using indexPage
+   and add its index to the queue.
+
+   Put a print statement inside your indexPage method and check that
+   Main indexes pages in the same order as mary.txt.
+
+
+HOMEWORK
+
+6. For each URL on the page, increment its number of references.
+   Test.  This version will allow double voting so it won't match
+   mary.txt
+
+   Put all the page indices into a Set first.  Then increment the
+   number of references for each element of the Set.  Now it should
+   match mary.txt.
+
+
+7. Look at WordTable.java.  Put a HardDisk variable wordDisk into Binge.
+   What is T?  (Check the notes!)  Create a wordToIndex table.
+
+
+8. Write the indexWord method.  What is the type of the "file" variable?
+
+
+9. For each word on the page (that was just dequeued), add the current
+   page index to its list (its "file").  Test.  This will not match
+   mary.txt because there will be duplicates.
+
+   Add code to avoid adding a page index if it is already at the end
+   of the list (because the word appeared earlier on that page).  Now
+   it should match mary.txt.
+
+
+10. Print out the disks and maps at the end of gather so you see the
+    same result at mary.txt.
+
+    IMPORTANT (if you want points): Call PageTrie write and WordTable
+    write to write out your data to disk for real at the end of gather.
+
+    pageToIndex.write(pageDisk);
+    wordToIndex.write(wordDisk);
+
+
+
+

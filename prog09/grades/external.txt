@@ -1,0 +1,5 @@
+Belliard	Login: fbel220				Name: Francisco Belliard
+javac prog09/ExternalSort.java
+java prog09/ExternalSort
+SCORE: 15/15
+

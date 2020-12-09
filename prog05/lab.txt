@@ -1,0 +1,47 @@
+0. Create package prog05.
+
+1. Finish implementing ArrayStack.java.  Copy the missing methods from
+   StackInt, including their javadoc and fill them in.  Since I set
+   INITIAL_CAPACITY to 100, you can start with an empty reallocate()
+   method.  Test your implementation of StackInt using StackTester.
+
+   If that is working, implement reallocate(), set INITIAL_CAPACITY to
+   2 and test again (pushing more than two items, of course).
+
+   Don't forget to test popping and peeking an empty stack.
+
+2. Copy all the missing methods from StackInt (including javadoc) and
+   finish implementing LinkedStack.java, an implementation of StackInt
+   using a linked list.  Modify StackTester to test it.
+
+3. Finish implementing ListStack.java, an implementation of StackInt
+   using a java.util.List.  Test it.
+
+4. Finish the constructor of Tower.
+
+5. In play(), put in the correct while condition which is true if the
+   player is not finished and false if the player has successfully moved
+   all the disks to peg 'c' (pegs[2]).
+
+6. Finish stackToString.
+
+7. Implement move.  First make the move without checking.  Test and
+   play, being careful not to make an illegal move.  Then implement checking.
+
+8. Test and play.
+
+DEFINITELY HOMEWORK
+
+8. Create an inner Goal class.
+
+9. Create a method to display a stack of goals.  To add a newline:
+
+	s = s + "\n";
+
+10. Implement solve.  It should call displayPegs() at the beginning and
+   after it makes each move.  It should display the goal stack just
+   before it pops the next goal.
+
+
+
+

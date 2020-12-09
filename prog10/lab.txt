@@ -1,0 +1,65 @@
+0. Create package prog10.  Install the Java files.
+
+1. Run ChainedHashTable.  It should run, but removes won't happen.
+
+2. Study put carefully and ask questions if you don't understand it.
+
+3. Implement remove using the comments provided.  Test.
+
+4. Now implement rehash.  Test.  See prog10-chained-out.txt.
+
+5. Run OpenHashTable.  It won't run.  Study the documentation for
+   find.  Make sure you understand what it does and why.  Study the
+   put and remove methods.  Ask questions.
+
+6. Implement find.  Test.
+
+7. Implement rehash.  Change DEFAULT_CAPACITY to 5.  Test.
+
+8. Modify OpenHashTable to have an int variable called nonNull which
+   is the number of non-null entries in the table: either a Node or
+   DELETED.  Modify the rule for rehashing to be that if at least half
+   the entries are non-null, then rehash with a new table length four
+   times size.  (Instead of comparing size to length/2, compare nonNull.)
+
+   See prog10-open-out.txt.
+
+9. Test your hash table implementations with Jumble.java (provided).
+
+HOMEWORK
+
+10. Implement EntryIterator in ChainedHashTable.  When you finish, the
+    special loop in main should work.
+
+11. Ditto OpenHashTable.
+
+12. Modify Jumble so that it keeps a list of words that match each
+    pattern: Map<String, List<String>>.  Test on "rdea".
+
+13. Add a second loop that prompts the user for a set of clue letters
+    and the length of the first pun word.  (This loop should activate
+    when the user clicks cancel.)
+
+    a. Sort the letters (sortedLetters).
+
+    b. For each key (key1) that has the right length:
+
+       i. Create an empty string key2.
+
+       ii. For each letter in letters
+             if key1 is done,
+                add the the letter to key2
+             it matches the current position in key1,
+                increment the current position.
+             if it comes after alphabetically the current letter in key1
+                key1 is invalid
+           Otherwise, add that letter to key2.
+
+    c. If all the letters in key1 were found in letters and if key2 is
+       a valid key, display the lists for key1 and key2.
+
+    See split.txt for an example of this algorithm in action.
+
+    Test on the Jumble examples.  Use dict instead of words.
+    
+      

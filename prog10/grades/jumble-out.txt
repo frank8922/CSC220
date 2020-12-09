@@ -1,0 +1,25 @@
+put emossyz [zymoses]
+put eeimmorstyz [zymosimeter]
+put imossyz [zymosis]
+put elmoorstyz [zymosterol]
+put cehimnostyz [zymosthenic]
+put ccehimnotyz [zymotechnic]
+put accehilmnotyz [zymotechnical]
+put ccehimnostyz [zymotechnics]
+put cehmnotyyz [zymotechny]
+put cimotyz [zymotic]
+put acillmotyyz [zymotically]
+put eimotyzz [zymotize]
+put cimootxyz [zymotoxic]
+put egimrsuyz [zymurgies]
+put gmruyyz [zymurgy]
+put ehmtyz [zythem]
+put hmtuyz [zythum]
+put avyyzzz [zyzzyva]
+put asvyyzzz [zyzzyvas]
+Enter jumble. 
+wtinge unjumbled is [tewing, twinge]
+Enter jumble. 
+Enter letters from clues in any order. 
+How many letters in the first word? 
+Enter letters from clues in any order. 

@@ -1,0 +1,141 @@
+Quick IQ test:  what's the next number in this sequence?
+
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ?
+
+This is the famous Fibonacci sequence.
+
+For this lab, you will create implementations of the Fibonacci
+sequences with different running times and test your ability to
+predict their running times using the O() analysis you learned in
+class.
+
+0. Test prog03.jar.
+
+   Try different starting buttons.  Each has a different O() time:
+   O(1), O(log n), O(n) and O(phi^n)
+
+   The last one is phi to the n'th power, where
+
+	phi = (sqrt(5)+1)/2 = 1.61803399...
+
+
+   **VERIFY** that the percentage error it is calculating is CORRECT.
+   (Also do this for YOUR program later!)
+
+
+1. Run Eclipse.  Create package prog03 and install the java files I provided.
+
+   Implement Main.averageTime(fib, n, ncalls).
+
+   Run Main.  You should see something like this:
+
+prog03.ExponentialFib@3abfe836
+0 0.0
+1 1.0
+2 1.0
+3 2.0
+4 3.0
+5 5.0
+6 8.0
+7 13.0
+8 21.0
+9 34.0
+10 55.0
+n1 20 time1 31.67975600000006
+c 0.002094252405529497
+n2 30 estimated time 3896.352411981697
+n2 30 actual time 3660.8320700000013
+
+What the program did was use the running time on n=20 to determine the
+constant and then estimate the running time for n=30.  My run was
+pretty accurate, but I think I got lucky.  How did you do?
+
+
+2. I picked 1000 calls for n1 and 100 calls for n2.  What numbers
+   would correspond to one second of total calling time?  Don't forget
+   the times are given in microseconds.  So if it takes 50
+   microseconds, then you can call it 20,000 times in one second,
+   right?  So how many times for the number of microseconds you got?
+   Modify your program to use these numbers of calls.
+
+
+3. Using the comments I provided, write Main.accurateTime(fib, n),
+   which does the same thing automatically.
+   Modify Main.labExperiments to call this method instead.
+
+
+4. Add code to estimate how long it would take to compute fib(100).
+   Would it finish running before end of lab?  If not, when will it
+   finish?  
+
+
+5. Implement LinearFib that computes fib(n) in O(n) time.  How?  Set
+   a=0 and b=1.  What do you have to do to make a=1 and b=1?  a=1 and
+   b=2?  a=2 and b=3?  a=3 and b=5?  a=5 and b=8?
+
+   What should the O() method return?
+
+
+5. Switch to LinearFib in Main.
+
+
+6. Ditto LogFib.
+
+
+7. Implement ConstantFib, which is just like LogFib only it calls
+   Math.pow instead of the private pow.  Test its running time.
+
+
+HOMEWORK DUE WEDNESDAY AT 11AM
+
+8. Write a method doExperiments(Fib fib) in Main.  It should loop
+   forever until the user clicks CANCEL.
+
+a. Prompt the user for an integer.  To use a class or interface from
+   prog02, just put, for example, 
+
+import prog02.GUI;
+
+  at the top of Main.java.  Convert the string to an integer n using
+  what you learned in CSC120.
+
+b. Call accurateTime to get the running time for fib(n).  Calculate
+   the constant for the the O().
+
+c. Display n, fib(n) (stored in fibn), the running time, and the
+   constant for that O() (using sendMessage).
+
+d. Modify main to call doExperiments(new ExponentialFib()) to test it.
+
+
+9. Modify doExperiments:
+
+a. If the user enters blank, a non-integer, or a negative integer,
+   give a warning and ask again until the user provides a positive
+   integer or selects CANCEL.
+
+b. Store the constant in a variable declared outside the loop,
+   initially zero.  Before calculating the constant, check if it has
+   been calculated in a previous loop (it is not zero).  If so, use
+   the previous constant to estimate the current running time and
+   display the estimate.  This estimate will appear in a sendMessage
+   before the sendMessage in 8c.
+
+c. Instead of displaying the new constant in the 8c sendMessage,
+   display the percentage error between the estimate and the actual
+   running time.
+
+
+10. Write a method doExperiments() in Main.
+
+   It should give the user the choice of testing one of the five Fib
+   implementations and then call doExperiments(fib) on that one.
+
+   Modify main to call it.
+
+
+11. MysteryFib inherits ExponentialFib's O() method, but that is
+    clearly wrong.  Try overriding the O() method in MysteryFib with
+    different functions to figure out which one is best.  Leave the
+    best one in your solution.
+

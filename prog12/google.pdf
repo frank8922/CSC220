@@ -1,0 +1,647 @@
+%PDF-1.3
+%‚„œ”
+2 0 obj
+<<
+/Length 2705
+>>
+stream
+BT
+/TT2 1 Tf
+10 0 0 10 43 756.3333 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+[(google.txt)-4500(Tue Apr 16 09:46:59 2019)-4500(1)]TJ
+/TT4 1 Tf
+0 -1.6333 TD
+(REVIEW:  INTERFACES, METHODS, and IMPLEMENTATIONS)Tj
+0 -2.2 TD
+(Interface:  List)Tj
+0 -1.1 TD
+(Methods:  size\(\), add\(x\), add\(i, x\), remove\(i\), get\(i\), set\(i, x\))Tj
+T*
+(Implementations:  ArrayList, LinkedList)Tj
+0 -2.2 TD
+(Interface:  Map)Tj
+0 -1.1 TD
+(Methods:  size\(\), get\(k\), put\(k, v\), keySet\(\))Tj
+T*
+(Implementations:  TreeMap, HashMap)Tj
+0 -2.2 TD
+(Interface:  Deque \(a.k.a. StackInt\))Tj
+0 -1.1 TD
+(Methods:  empty\(\), peek\(\), pop\(\), push\(x\))Tj
+T*
+(Implementations:  ArrayDeque, LinkedList)Tj
+0 -2.2 TD
+(Interface:  Queue)Tj
+0 -1.1 TD
+(Methods:  size\(\), offer\(x\), peek\(\), poll\(\), [add\(x\), element\(\), remove\(\)])Tj
+T*
+(Implementations:  ArrayDeque, LinkedList, PriorityQueue \(a.k.a. Heap\))Tj
+0 -2.2 TD
+(Interface:  Comparable)Tj
+0 -1.1 TD
+(Methods:  compareTo\(that\))Tj
+0 -2.2 TD
+(Interface:  Comparator)Tj
+0 -1.1 TD
+(Methods:  compare\(x, y\))Tj
+0 -2.2 TD
+(Interface:  Iterator)Tj
+0 -1.1 TD
+(Methods:  hasNext\(\), next\(\))Tj
+0 -2.2 TD
+(Interface:  Iterable)Tj
+0 -1.1 TD
+(Methods:  iterator\(\))Tj
+T*
+(Implementations:  everything)Tj
+0 -2.2 TD
+(Interface: Set \(Like a Map without a value.\))Tj
+0 -1.1 TD
+(Methods:  add\(x\), contains\(x\), remove\(x\))Tj
+T*
+(Implementations: TreeSet, HashSet)Tj
+0 -2.2 TD
+(Make sure you know that running times of the methods for each implementation.)Tj
+T*
+(COMPETING WITH GOOGLE)Tj
+T*
+(Letís consider a simple description of the Internet.  The Internet consists of *web)Tj
+0 -1.1 TD
+(pages* which are actually just files.  There are many types of files, but the ones)Tj
+T*
+(which interest us are written in HTML \(Hyper-Text Mark-up Language\).  Each web page is)Tj
+T*
+(accessed by its URL \(Uniform \(or universal\) Resource Locator\), which looks like this:)Tj
+0 -2.2 TD
+(        http://www.cs.miami.edu/òvjm/csc220/index.html)Tj
+T*
+(An HTML file has words \(text\) on it and URLs \(links\), written in a special way:)Tj
+T*
+(        Here is some )Tj
+0 -1.1 TD
+(        <A HREF=http://download.oracle.com/javase/7/docs/api/>)Tj
+T*
+(        Java Documentation</A>)Tj
+0 -2.2 TD
+(This makes the words Java Documentation appear, but when you click on it, it goes to)Tj
+0 -1.1 TD
+(the web page with URL)Tj
+0 -2.2 TD
+(        http://download.oracle.com/javase/7/docs/api/)Tj
+T*
+(By the way, if no file is mentioned, the default is index.html.  If there is no)Tj
+0 -1.1 TD
+(index.html, it just lists the directory, like every time you go to one of my prog)Tj
+T*
+(directories.)Tj
+0 -2.2 TD
+(When we give some search words to Google, such as)Tj
+T*
+(        Victor Milenkovic Java)Tj
+ET
+endstream
+endobj
+3 0 obj
+<<
+/ProcSet [/PDF /Text ]
+/Font <<
+/TT2 4 0 R
+/TT4 5 0 R
+>>
+/ExtGState <<
+/GS1 6 0 R
+>>
+>>
+endobj
+9 0 obj
+<<
+/Length 4192
+>>
+stream
+BT
+/TT2 1 Tf
+10 0 0 10 43 756.3333 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+[(google.txt)-4500(Tue Apr 16 09:46:59 2019)-4500(2)]TJ
+/TT4 1 Tf
+0 -1.6333 TD
+(Google finds all web pages which contain those words and ranks them by significance.)Tj
+0 -1.1 TD
+(Itís a lot more complicated now, but originally the significance was determined by the)Tj
+T*
+(number of references \(links\) from other web pages on the Internet.)Tj
+0 -2.2 TD
+(The idea is that if a web page is "good", then people will "vote" for it by putting)Tj
+0 -1.1 TD
+(links to it in their web pages.  If this were done honestly, then the original idea)Tj
+T*
+(would work fine.  Of course, people try to subvert this idea for fun or profit by)Tj
+T*
+(creating lots of "dummy" web pages that link to a page they want people to go to.)Tj
+T*
+(Itís like stuffing the ballot box in the old days of voting.)Tj
+0 -2.2 TD
+(INDEXING WEB PAGES)Tj
+T*
+(Obviously, Google doesnít do the search by going out on the Internet when you make a)Tj
+0 -1.1 TD
+(search request.  Instead, they gather up information on web pages ahead of time and)Tj
+T*
+(store this information on their own servers.  They have to store it in a way that)Tj
+T*
+(facilitates rapid search.  This is often called *indexing*.  We now know enough)Tj
+T*
+(techniques to have a shot at explaining how Google manages to organize their)Tj
+T*
+(information in a way that allows searches in a fraction of a second.  Since we donít)Tj
+T*
+(really know how Google does it, we will talk about a new search company called Binge)Tj
+T*
+(\(Binge Is Not Google Either\) and discuss how they might do it.)Tj
+0 -2.2 TD
+(To start with, *indexing* is not mysterious at all.  Every time Binge sees a new web)Tj
+0 -1.1 TD
+(page, it creates a *file* on its hard disk\(s\) to store information about the page,)Tj
+T*
+(such as its URL, date it was seen, and perhaps even a compressed copy.)Tj
+0 -2.2 TD
+(Inside the computer, you address individual *bytes*.  On a hard disk, the smallest)Tj
+0 -1.1 TD
+(unit that can be addressed is a *block*, usually 512 \(2^9\) bytes.  A file and the web)Tj
+T*
+(page it represents can be indexed by the address of its first block.  However, disks)Tj
+T*
+(are only terabytes in size.  A 8T \(2^43 byte\) disk has 16 billion \(2^34\) blocks)Tj
+T*
+(\(34+9=43\).  But there are trillions of web pages out there.  So Binge is going to need)Tj
+T*
+(at least 100 hard disks, probably many more.  Still, thatís pretty reasonable for a)Tj
+T*
+(company.)Tj
+0 -2.2 TD
+(The index includes the disk number followed by the block number on that disk.  Six)Tj
+0 -1.1 TD
+(bytes is probably plenty.  The first 12 bytes indicate the disk number and the)Tj
+T*
+(remaining 34 are the block number on the 8T disk.  In any case, an int is not enough)Tj
+T*
+(since it is only four bytes.  An 8-byte long is way more than enough.  \(Of course, when)Tj
+T*
+(we switched from 16-bit integers to 32-bit integers, we thought *those* were way more)Tj
+T*
+(than enough.\))Tj
+0 -2.2 TD
+(So the index of a web page is a unique long \(64-bit\) integer.  Since it corresponds to)Tj
+0 -1.1 TD
+(a disk and a block on a disk, we can get to the web page information file in one disk)Tj
+T*
+(seek, about 1ms.)Tj
+0 -2.2 TD
+(HAVE WE INDEXED A PAGE ALREADY?)Tj
+T*
+(Suppose we see a link, http://www.cs.miami.edu/òvjm/csc220/index.html.  Do we need to)Tj
+0 -1.1 TD
+(index it?  Or is it indexed already?  How can Binge know?)Tj
+0 -2.2 TD
+(Even if each info file contains the URL, we would have to scan multiple disks to find)Tj
+0 -1.1 TD
+(the file, if it exists.  That will take a ridiculous amount of time.)Tj
+0 -2.2 TD
+(We need a Map from the URL to the index of the web page.  If the URL is not a key, then)Tj
+0 -1.1 TD
+(it has not been indexed yet.  With trillions of web pages, this Map cannot fit in RAM.)Tj
+T*
+(It will barely fit on one hard disk!)Tj
+0 -2.2 TD
+(TRIE MAP FROM URL TO INDEX)Tj
+T*
+(I have already explained that the COMPRESSED TRIE you implemented would make a good)Tj
+0 -1.1 TD
+(external data structure.  Lookup is L disk seeks, but we can skip the "jm", the "sc",)Tj
+T*
+(and the "ndex.html" \(why?\).  For trillions of URLs, 16ms is not so bad.)Tj
+0 -2.2 TD
+(However, there is a problems with using URLs as keys.)Tj
+ET
+endstream
+endobj
+10 0 obj
+<<
+/ProcSet [/PDF /Text ]
+/Font <<
+/TT2 4 0 R
+/TT4 5 0 R
+>>
+/ExtGState <<
+/GS1 6 0 R
+>>
+>>
+endobj
+12 0 obj
+<<
+/Length 2617
+>>
+stream
+BT
+/TT2 1 Tf
+10 0 0 10 43 756.3333 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+[(google.txt)-4500(Tue Apr 16 09:46:59 2019)-4500(3)]TJ
+/TT4 1 Tf
+0 -1.6333 TD
+(NORMALIZING URLS)Tj
+0 -2.2 TD
+(Whatís wrong with)Tj
+T*
+(        http://www.cs.miami.edu/òvjm/csc220/index.html)Tj
+T*
+(?  Itís like)Tj
+T*
+(        November 17, 2019)Tj
+T*
+(It goes from month to day then jumps back to year.  And those Europeans shouldnít feel)Tj
+0 -1.1 TD
+(so smug.  They would say 17/11/2019, which is completely backwards, although at least)Tj
+T*
+(it is consistent.  But what if they include a time?  Class is 11:15 on 17/11/2019?  Or)Tj
+T*
+(17/11/2019 at 11:15?  Inconsistent again.  Or are we going to say class starts at)Tj
+T*
+(15:11?)Tj
+0 -2.2 TD
+(So we will use the format)Tj
+T*
+(        edu.miami.cs.www/òvjm/csc220/index.html)Tj
+T*
+(We drop the http:// because we will only work with web pages.)Tj
+T*
+(This fixes the first problem.  The following two strings are far apart:)Tj
+T*
+(        http://www.miami.edu)Tj
+0 -1.1 TD
+(        http://www.cs.miami.edu)Tj
+0 -2.2 TD
+(http://www.fiu.edu is closer to http://www.miami.edu than http://www.cs.miami.edu.)Tj
+T*
+(But the normalized versions are close:)Tj
+T*
+(        edu.miami.www)Tj
+0 -1.1 TD
+(        edu.miami.cs.www)Tj
+0 -2.2 TD
+(COMPRESSED EXTERNAL TRIE)Tj
+T*
+(The web page for my course has a 40-character URL, and its pretty simple.  Even after)Tj
+0 -1.1 TD
+(normalization, the longest URL in the csc220 page is)Tj
+0 -2.2 TD
+(    edu.miami.edu.www/òvjm/csc220/prog02/doc/prog02/class-use/DirectoryEntry.html)Tj
+T*
+(which is almost 80, and Iím not even trying.  A big web site will easily go past 256)Tj
+0 -1.1 TD
+(characters.)Tj
+0 -2.2 TD
+(In an EXTERNAL TRIE, each subdirectory in a directory starts with a different letter.)Tj
+0 -1.1 TD
+(The elements of a subdirectory all start with that letter, so it is left off.  In a)Tj
+T*
+(COMPRESSED TRIE, if the elements share more than just the first letter, the name of)Tj
+T*
+(the subdirectory is the common prefix, and they leave that off.)Tj
+0 -2.2 TD
+(See DirectoryTrie.png.  Directory "j" contains "ack...html" and "ill...html".)Tj
+0 -1.1 TD
+(\(Because "." is a reserved directory name, we have to use "..." in place of ".".\))Tj
+T*
+(We can look up any web page using at most 3 disk seeks.)Tj
+0 -2.2 TD
+(INDEXING PAGES AGAIN)Tj
+T*
+(For our implementation, we will use a PageFile class to represent the page file.  It)Tj
+0 -1.1 TD
+(contains its index, URL, and reference count \(links from other pages\).)Tj
+0 -2.2 TD
+(A HardDisk class will map a Long page index to its PageFile.)Tj
+0 -1.1 TD
+(A PageTrie class will map a URL to its page index.)Tj
+ET
+endstream
+endobj
+13 0 obj
+<<
+/ProcSet [/PDF /Text ]
+/Font <<
+/TT2 4 0 R
+/TT4 5 0 R
+>>
+/ExtGState <<
+/GS1 6 0 R
+>>
+>>
+endobj
+15 0 obj
+<<
+/Length 3601
+>>
+stream
+BT
+/TT2 1 Tf
+10 0 0 10 43 756.3333 Tm
+0 g
+/GS1 gs
+0 Tc
+0 Tw
+[(google.txt)-4500(Tue Apr 16 09:46:59 2019)-4500(4)]TJ
+/TT4 1 Tf
+0 -1.6333 TD
+(INDEXING WORDS)Tj
+0 -2.2 TD
+(Each word also needs its own file.  In order to answer a query like "Victor)Tj
+0 -1.1 TD
+(Milenkovic Java", we need to know the web pages which contain Victor, those which)Tj
+T*
+(contain Milenkovic, and those which contain Java.  \(Then we will take the intersection)Tj
+T*
+(of these three lists.\)  So for each word, we need to know the list of web pages which)Tj
+T*
+(have that word.  For instance, we need to know the list of web pages which have)Tj
+T*
+(Milenkovic on them.)Tj
+0 -2.2 TD
+(What do we mean by a list of web pages?  It could be a list of URLs or a list of web)Tj
+0 -1.1 TD
+(page indices.  The latter is much more compact.  So for each word, we will have)Tj
+T*
+(a list of the indices of web pages which contain it.  Each word has a List<Long>.)Tj
+0 -2.2 TD
+(So the file contains the list of page indices of pages that contain that word.  The)Tj
+0 -1.1 TD
+(index of a word is the \(disk number\) and block address of the first block of that file.)Tj
+0 -2.2 TD
+(A HardDisk class will map a Long word index to its word file \(list of Long\).)Tj
+0 -1.1 TD
+(A WordTable class will map a word to its index.)Tj
+0 -2.2 TD
+(There are only millions of words, so the WordTable can be in RAM. A hash table)Tj
+0 -1.1 TD
+(\(HashMap\) is the best solution for WordTable.)Tj
+0 -2.2 TD
+(GATHERING ALL WEB PAGES)Tj
+T*
+(GoDaddy is a domain name registrar.  So when my wife wanted to create)Tj
+0 -1.1 TD
+(sleuthacademy.org, she paid GoDaddy some money and there is was.  \(She also has to)Tj
+T*
+(host it somewhere.\)  People register about one new domain PER SECOND, most with)Tj
+T*
+(GoDaddy.)Tj
+0 -2.2 TD
+(Each domain has multiple web pages, and Google wants to index them all.  So every day,)Tj
+0 -1.1 TD
+(GoDaddy tells Google about the new domains and Google indexes all their web pages and)Tj
+T*
+(everything they link to.)Tj
+0 -2.2 TD
+(How can we do the same thing?  We get a bunch of URLs.  For each one, check to make)Tj
+0 -1.1 TD
+(sure we havenít seen it before.  If not, index it and put it in a Queue.)Tj
+0 -2.2 TD
+(While the Queue is not empty, take out a URL.  Using the Browser I provide you, get)Tj
+0 -1.1 TD
+(the List of words and URLs on that page.  For each new URL, index it and put it in the)Tj
+T*
+(queue.  Index each new word.  Add the index of the current page \(the one we just)Tj
+T*
+(dequeued\) to the list for each word.  Increment the reference count for every page)Tj
+T*
+(that is referenced.)Tj
+0 -2.2 TD
+(AVOID DUPLICATION)Tj
+T*
+(If the same URL appears multiple times on a page, does it get multiple votes?  Suppose)Tj
+0 -1.1 TD
+(I put sleuthacademy.org a thousand times on my home page.  Will my wifeís page)Tj
+T*
+(increasing its reference count by 1000?  We probably donít want that.  Why not?)Tj
+0 -2.2 TD
+(The Browser class allows you to load a page, given its URL, and get a list of URLs and)Tj
+0 -1.1 TD
+(a list of words on that page.  You will need to convert each URL to its index.  Put)Tj
+T*
+(each index into a Set<Long> to keep track of those you have increased the number of)Tj
+T*
+(references.)Tj
+0 -2.2 TD
+(We also need to add the index of the current page to the list of indices of each word)Tj
+0 -1.1 TD
+(on that page.  But we donít want to add it twice.  However, we donít need a Set to keep)Tj
+T*
+(track of multiple words.  We can just look at the end of the list for a word to see if)Tj
+T*
+(the index is already there!)Tj
+0 -2.2 TD
+(mary.txt shows the result of indexing a small web site.)Tj
+ET
+endstream
+endobj
+16 0 obj
+<<
+/ProcSet [/PDF /Text ]
+/Font <<
+/TT2 4 0 R
+/TT4 5 0 R
+>>
+/ExtGState <<
+/GS1 6 0 R
+>>
+>>
+endobj
+6 0 obj
+<<
+/Type /ExtGState
+/SA false
+/SM 0.02
+/OP false
+/op false
+/OPM 1
+/BG2 /Default
+/UCR2 /Default
+/HT /Default
+/TR2 /Default
+>>
+endobj
+17 0 obj
+<<
+/Type /FontDescriptor
+/Ascent 753
+/CapHeight 562
+/Descent -246
+/Flags 262179
+/FontBBox [-113 -250 749 801]
+/FontName /Courier-Bold
+/ItalicAngle 0
+/StemV 133
+/XHeight 439
+/StemH 84
+>>
+endobj
+18 0 obj
+<<
+/Type /FontDescriptor
+/Ascent 753
+/CapHeight 562
+/Descent -246
+/Flags 35
+/FontBBox [-28 -250 628 805]
+/FontName /Courier
+/ItalicAngle 0
+/StemV 51
+/XHeight 426
+/StemH 51
+>>
+endobj
+4 0 obj
+<<
+/Type /Font
+/Subtype /TrueType
+/FirstChar 32
+/LastChar 120
+/Widths [600 0 0 0 0 0 0 0 0 0 0 0 0 0 600 0 
+600 600 600 600 600 600 600 0 0 600 600 0 0 0 0 0 
+0 600 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 600 0 0 0 0 0 0 0 0 0 0 0 
+0 0 0 0 0 600 0 600 0 0 0 0 600 0 0 600 
+600 0 600 0 600 600 0 0 600 ]
+/Encoding /WinAnsiEncoding
+/BaseFont /Courier-Bold
+/FontDescriptor 17 0 R
+>>
+endobj
+5 0 obj
+<<
+/Type /Font
+/Subtype /TrueType
+/FirstChar 32
+/LastChar 152
+/Widths [600 600 600 0 0 0 0 0 600 600 600 600 600 600 600 600 
+600 600 600 600 600 600 600 600 600 600 600 0 600 600 600 600 
+0 600 600 600 600 600 600 600 600 600 600 0 600 600 600 600 
+600 600 600 600 600 600 600 600 600 600 600 600 0 600 600 0 
+0 600 600 600 600 600 600 600 600 600 600 600 600 600 600 600 
+600 600 600 600 600 600 600 600 600 600 600 0 0 0 0 0 
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+0 0 600 0 0 0 0 0 600 ]
+/Encoding /WinAnsiEncoding
+/BaseFont /Courier
+/FontDescriptor 18 0 R
+>>
+endobj
+1 0 obj
+<<
+/Type /Page
+/Parent 7 0 R
+/Resources 3 0 R
+/Contents 2 0 R
+>>
+endobj
+8 0 obj
+<<
+/Type /Page
+/Parent 7 0 R
+/Resources 10 0 R
+/Contents 9 0 R
+>>
+endobj
+11 0 obj
+<<
+/Type /Page
+/Parent 7 0 R
+/Resources 13 0 R
+/Contents 12 0 R
+>>
+endobj
+14 0 obj
+<<
+/Type /Page
+/Parent 7 0 R
+/Resources 16 0 R
+/Contents 15 0 R
+>>
+endobj
+19 0 obj
+<<
+/S /D
+>>
+endobj
+20 0 obj
+<<
+/Nums [0 19 0 R ]
+>>
+endobj
+7 0 obj
+<<
+/Type /Pages
+/Kids [1 0 R 8 0 R 11 0 R 14 0 R]
+/Count 4
+/MediaBox [0 0 612 792]
+>>
+endobj
+21 0 obj
+<<
+/CreationDate (D:20190416094710-04'00')
+/ModDate (D:20190416094710-04'00')
+/Producer (Apple pstopdffilter)
+>>
+endobj
+22 0 obj
+<<
+/Type /Catalog
+/Pages 7 0 R
+/PageLabels 20 0 R
+>>
+endobj
+xref
+0 23
+0000000000 65535 f 
+0000015266 00000 n 
+0000000016 00000 n 
+0000002773 00000 n 
+0000014301 00000 n 
+0000014693 00000 n 
+0000013768 00000 n 
+0000015661 00000 n 
+0000015346 00000 n 
+0000002879 00000 n 
+0000007123 00000 n 
+0000015427 00000 n 
+0000007230 00000 n 
+0000009900 00000 n 
+0000015510 00000 n 
+0000010007 00000 n 
+0000013661 00000 n 
+0000013908 00000 n 
+0000014110 00000 n 
+0000015593 00000 n 
+0000015621 00000 n 
+0000015762 00000 n 
+0000015891 00000 n 
+trailer
+<<
+/Size 23
+/Root 22 0 R
+/Info 21 0 R
+/ID [<598528e30a4b854847fba26c128225da><598528e30a4b854847fba26c128225da>]
+>>
+startxref
+15960
+%%EOF

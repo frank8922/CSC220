@@ -1,0 +1,3 @@
+infinite loop
+
+SCORE 50/100

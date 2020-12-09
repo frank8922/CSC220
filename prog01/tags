@@ -1,0 +1,39 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Computer	Computer.java	/^    public Computer(String man, String processor, double ram,$/;"	m	class:Computer
+Computer	Computer.java	/^public class Computer {$/;"	c
+Lamb	Lamb.java	/^public class Lamb {$/;"	c
+Laptop	Laptop.java	/^    public Laptop(String man, String proc, double ram, int disk,$/;"	m	class:Laptop
+Laptop	Laptop.java	/^public class Laptop extends Computer {$/;"	c
+Main	Main.java	/^public class Main {$/;"	c
+array	Lamb.java	/^  String[] array = { "Mary", "had", "a", "little", "lamb",$/;"	f	class:Lamb
+computePower	Computer.java	/^    public double computePower() {$/;"	m	class:Computer
+computePower	Laptop.java	/^    public double computePower() {$/;"	m	class:Laptop
+counter	Lamb.java	/^  static int counter = 0;$/;"	f	class:Lamb
+diskSize	Computer.java	/^    private int diskSize;$/;"	f	class:Computer	file:
+getDiskSize	Computer.java	/^    public int getDiskSize() {$/;"	m	class:Computer
+getProcessorSpeed	Computer.java	/^    public double getProcessorSpeed() {$/;"	m	class:Computer
+getRamSize	Computer.java	/^    public double getRamSize() {$/;"	m	class:Computer
+getScreenSize	Laptop.java	/^  public double getScreenSize () {$/;"	m	class:Laptop
+getWeight	Laptop.java	/^  public double getWeight () {$/;"	m	class:Laptop
+insert	Lamb.java	/^  void insert (String word, int index) {$/;"	m	class:Lamb
+main	Lamb.java	/^  public static void main (String[] args) {$/;"	m	class:Lamb
+main	Main.java	/^  public static void main (String[] args) {$/;"	m	class:Main
+manufacturer	Computer.java	/^    private String manufacturer;$/;"	f	class:Computer	file:
+print	Lamb.java	/^  void print () {$/;"	m	class:Lamb
+processor	Computer.java	/^    private String processor;$/;"	f	class:Computer	file:
+processorSpeed	Computer.java	/^    protected double processorSpeed;$/;"	f	class:Computer
+prog01	Computer.java	/^package prog01;$/;"	p
+prog01	Lamb.java	/^package prog01;$/;"	p
+prog01	Laptop.java	/^package prog01;$/;"	p
+prog01	Main.java	/^package prog01;$/;"	p
+ramSize	Computer.java	/^    private double ramSize;$/;"	f	class:Computer	file:
+screenSize	Laptop.java	/^    private double screenSize;$/;"	f	class:Laptop	file:
+size	Lamb.java	/^  int size = 5;$/;"	f	class:Lamb
+toString	Computer.java	/^    public String toString() {$/;"	m	class:Computer
+toString	Laptop.java	/^    public String toString() {$/;"	m	class:Laptop
+weight	Laptop.java	/^    private double weight;$/;"	f	class:Laptop	file:

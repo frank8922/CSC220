@@ -1,0 +1,77 @@
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+How many disks?
+UI 3
+3
+2
+1
+0:Human plays. 1:Computer plays.
+UI 0
+a 321
+b 
+c 
+0:ab 1:ac 2:ba 3:bc 4:ca 5:cb
+UI 2
+play():from: 1
+play():to: 0
+peg b is empty
+a 321
+b 
+c 
+0:ab 1:ac 2:ba 3:bc 4:ca 5:cb
+UI 1
+play():from: 0
+play():to: 2
+a 32
+b 
+c 1
+0:ab 1:ac 2:ba 3:bc 4:ca 5:cb
+UI 1
+play():from: 0
+play():to: 2
+Cannont place disk: 2 on disk: 1
+a 32
+b 
+c 1
+0:ab 1:ac 2:ba 3:bc 4:ca 5:cb
+UI 0
+play():from: 0
+play():to: 1
+a 3
+b 2
+c 1
+0:ab 1:ac 2:ba 3:bc 4:ca 5:cb
+UI 5
+play():from: 2
+play():to: 1
+a 3
+b 21
+c 
+0:ab 1:ac 2:ba 3:bc 4:ca 5:cb
+UI 1
+play():from: 0
+play():to: 2
+a 
+b 21
+c 3
+0:ab 1:ac 2:ba 3:bc 4:ca 5:cb
+UI 2
+play():from: 1
+play():to: 0
+a 1
+b 2
+c 3
+0:ab 1:ac 2:ba 3:bc 4:ca 5:cb
+UI 3
+play():from: 1
+play():to: 2
+a 1
+b 
+c 32
+0:ab 1:ac 2:ba 3:bc 4:ca 5:cb
+UI 1
+play():from: 0
+play():to: 2
+You win!
+
+SCORE: 40/40
